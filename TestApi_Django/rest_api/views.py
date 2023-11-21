@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-from core.models import Alumno
-from .serializers import AlumnoSerializer
+from core.models import Alumno, Conductor
+from .serializers import AlumnoSerializer, ConductorSerializer
 
 # Create your views here.
 @csrf_exempt
@@ -24,3 +24,8 @@ def detalle_alumno(request, idAlumno):
     serializer = AlumnoSerializer(alumno)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def lista_conductor(request):
+    conductores = Conductor.objects.all()
+    serializer = ConductorSerializer(conductores, many=True)
+    return Response(serializer.data)
