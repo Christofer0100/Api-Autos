@@ -29,3 +29,13 @@ def lista_conductor(request):
     conductores = Conductor.objects.all()
     serializer = ConductorSerializer(conductores, many=True)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def detalle_conductor(request, idConductor):
+    try:
+        conductor = Conductor.objects.get(idConductor=idConductor)
+    except Conductor.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    serializer = ConductorSerializer(conductor)
+    return Response(serializer.data)
