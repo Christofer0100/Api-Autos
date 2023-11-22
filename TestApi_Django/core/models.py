@@ -16,6 +16,9 @@ class Conductor(models.Model):
     Gmail = models.CharField(max_length=50, verbose_name = "Gmail")
     Contrasena = models.CharField(max_length=50, verbose_name = "Contrasena")
     nombreConductor = models.CharField(max_length=50, verbose_name = "Nombre de Conductor")
+    autoMarca = models.CharField(max_length=50, verbose_name = "Marca del Auto")
+    autoPatente = models.CharField(max_length=50, verbose_name = "Patente del Auto")    
+
 
     def __str__(self):
         return self.nombreConductor
