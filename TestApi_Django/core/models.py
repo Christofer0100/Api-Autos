@@ -19,6 +19,7 @@ class Conductor(models.Model):
     autoMarca = models.CharField(max_length=50, verbose_name = "Marca del Auto")
     autoPatente = models.CharField(max_length=50, verbose_name = "Patente del Auto")    
     vPersona = models.IntegerField(verbose_name="Valor por Persona")
+    horaSalida = models.TimeField(verbose_name="Hora Salida", default=None, null=True)
 
 
     def __str__(self):
