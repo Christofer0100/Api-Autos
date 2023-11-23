@@ -18,6 +18,7 @@ class Conductor(models.Model):
     nombreConductor = models.CharField(max_length=50, verbose_name = "Nombre de Conductor")
     autoMarca = models.CharField(max_length=50, verbose_name = "Marca del Auto")
     autoPatente = models.CharField(max_length=50, verbose_name = "Patente del Auto")    
+    vPersona = models.IntegerField(verbose_name="Valor por Persona")
 
 
     def __str__(self):

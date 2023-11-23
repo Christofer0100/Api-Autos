@@ -9,4 +9,4 @@ class AlumnoSerializer(serializers.ModelSerializer):
 class ConductorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conductor
-        fields = ['idConductor', 'Gmail', 'Contrasena', 'nombreConductor','autoMarca','autoPatente']
+        fields = ['idConductor', 'Gmail', 'Contrasena', 'nombreConductor','autoMarca','autoPatente','vPersona']
